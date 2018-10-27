@@ -38,7 +38,10 @@ namespace SeedSolution.WebApi.Controllers
             try
             {
                 await Task.Run(() => this._UserMaint.SaveClient(client));
-                return Ok();
+                if (this._UserMaint.Status())
+                    return Ok();
+                else
+                    return BadRequest(this._UserMaint.Message());
             }
             catch (Exception ex)
             {

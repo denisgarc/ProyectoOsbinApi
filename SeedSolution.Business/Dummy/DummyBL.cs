@@ -26,6 +26,8 @@ namespace SeedSolution.Business.Dummy
         public void SaveClient(Client pClient)
         {
             this._userMaint.SaveClient(pClient);
+            this.ResponseStatus = this._userMaint.Status();
+            this.ResponseMessage = this._userMaint.Message();
         }
 
         public Client SearchClient(string document_number)

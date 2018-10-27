@@ -35,8 +35,8 @@ namespace SeedSolution.Data.Dummy
                     CommandType = CommandType.StoredProcedure,
                     CommandText = "save_client"
                 };
-                cmd.Parameters.Add("@client_name", SqlDbType.VarChar).Value = pClient.client_id;
-                cmd.Parameters.Add("@client_document", SqlDbType.VarChar).Value = pClient.client_document;
+                cmd.Parameters.Add("@client_name", SqlDbType.VarChar, 100).Value = pClient.client_name;
+                cmd.Parameters.Add("@client_document", SqlDbType.VarChar, 50).Value = pClient.client_document;
                 cmd.Parameters.Add("@client_birthday", SqlDbType.Date).Value = pClient.client_birthday;
                 tools.Getds(cmd);
                 ResponseStatus = tools.Status();
@@ -47,6 +47,7 @@ namespace SeedSolution.Data.Dummy
             {
                 ResponseMessage = "UserMaint - SaveClient - " + ex.Message;
                 ResponseStatus = false;
+                throw ex;
             }
 
         }
