@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SeedSolution.WebApi.Handlers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
@@ -19,6 +20,8 @@ namespace SeedSolution.WebApi
                 routeTemplate: "api/{controller}/{action}/{id}",
                 defaults: new { id = RouteParameter.Optional }
             );
+
+            config.MessageHandlers.Add(new CustomResponseHandler());
         }
     }
 }

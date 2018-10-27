@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Dummy\IUserMaintBL.cs" />
+    <Compile Include="Dummy\IUserPaymentBL.cs" />
     <Compile Include="Log\ISysLogBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SecurityAccess\ISecurityAccesBL.cs" />

@@ -11,6 +11,11 @@ using SeedSolution.Data.Interfaces.SecurityAcces;
 using SeedSolution.Business.SecurityAccess;
 using SeedSolution.Business.Interfaces;
 
+using SeedSolution.Business.Dummy;
+using SeedSolution.Business.Interfaces.Dummy;
+using SeedSolution.Data.Interfaces.Dummy;
+using SeedSolution.Data.Dummy;
+
 namespace SeedSolution.IoC
 {
     public class Setup
@@ -22,6 +27,11 @@ namespace SeedSolution.IoC
                 x.For<IConnectionTools>().Use<MSSQLTools>();
                 x.For<ISysUser>().Use<SysUserDB>();
                 x.For<ISecurityAccesBL>().Use<SecurtiyAccesBL>();
+                x.For<IUserMaint>().Use<UserMaint>();
+                x.For<IUserPayment>().Use<UserPayment>();
+                x.For<IUserMaintBL>().Use<DummyBL>();
+                x.For<IUserPaymentBL>().Use<DummyBL>();
+
                 //Más configuraciones
                 MoreIoCConfigurations(x);
             });

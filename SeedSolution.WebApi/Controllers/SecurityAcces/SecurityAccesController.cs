@@ -15,35 +15,35 @@ namespace SeedSolution.WebApi.Controllers.SecurityAccess
     public class SecurityAccessController : ApiController
     {   
         // api/SecurityAccessController/RenewalRequiered/1
-        [HttpGet]        
-        public ServiceResponse RenewalRequired(int id)
-        {
-            ServiceResponse response = new ServiceResponse();
-            ISecurityAccesBL userBL;
-            try
-            {
-                userBL = StructureMap.ObjectFactory.GetInstance<ISecurityAccesBL>();
-                var identity = (ClaimsIdentity)RequestContext.Principal.Identity;
-                var claims = identity.Claims.ToList();
-                int UserId = int.Parse(claims[1].Value.ToString());                
-                response.Result = userBL.PassRenewalRequired(id);
-                if (userBL.Status())
-                {
-                    response.ResponseStatus = 200;
-                    response.ResponseMessage = string.Empty;
-                }
-                else
-                {
-                    response.ResponseStatus = 400;
-                    response.ResponseMessage = userBL.Message();
-                }
-            }
-            catch (Exception EX)
-            {
-                response.ResponseStatus = 400;
-                response.ResponseMessage = EX.Message;
-            }
-            return response;
-        }
+        //[HttpGet]        
+        //public ResponseService RenewalRequired(int id)
+        //{
+        //    ResponseService response = new ResponseService();
+        //    ISecurityAccesBL userBL;
+        //    try
+        //    {
+        //        userBL = StructureMap.ObjectFactory.GetInstance<ISecurityAccesBL>();
+        //        var identity = (ClaimsIdentity)RequestContext.Principal.Identity;
+        //        var claims = identity.Claims.ToList();
+        //        int UserId = int.Parse(claims[1].Value.ToString());                
+        //        response.Result = userBL.PassRenewalRequired(id);
+        //        if (userBL.Status())
+        //        {
+        //            response.ResponseStatus = 200;
+        //            response.ResponseMessage = string.Empty;
+        //        }
+        //        else
+        //        {
+        //            response.ResponseStatus = 400;
+        //            response.ResponseMessage = userBL.Message();
+        //        }
+        //    }
+        //    catch (Exception EX)
+        //    {
+        //        response.ResponseStatus = 400;
+        //        response.ResponseMessage = EX.Message;
+        //    }
+        //    return response;
+        //}
     }
 }

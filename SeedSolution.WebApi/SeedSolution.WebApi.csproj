@@ -127,11 +127,13 @@
   <ItemGroup>
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="Controllers\DummyController.cs" />
     <Compile Include="Controllers\SecurityAcces\SecurityAccesController.cs" />
     <Compile Include="Extensions\OwinContextExtention.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Handlers\CustomResponseHandler.cs" />
     <Compile Include="Models\DataContractAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Provider\OAuthAppProvider.cs" />

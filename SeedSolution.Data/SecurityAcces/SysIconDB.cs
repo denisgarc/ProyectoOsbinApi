@@ -30,7 +30,7 @@ namespace SeedSolution.Data.SecurityAcces
             catch (Exception ex)
             {
 
-                throw;
+                throw ex;
             }
             return icons;
         }

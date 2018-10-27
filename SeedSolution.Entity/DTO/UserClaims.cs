@@ -10,7 +10,7 @@ namespace SeedSolution.Entity.DTO
 {
     [DataContract]
     [Serializable]
-    public class UserClaims : ServiceResponse
+    public class UserClaims : ResponseService
     {
         [DataMember]
         public SysUser User { get; set; }
