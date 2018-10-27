@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Http;
+using System.Web.Http.Cors;
 
 namespace SeedSolution.WebApi
 {
@@ -11,6 +12,11 @@ namespace SeedSolution.WebApi
         public static void Register(HttpConfiguration config)
         {
             // Configuración y servicios de API web
+            config.EnableCors(new EnableCorsAttribute("*"
+                , "*"
+                , "GET,PUT,POST,DELETE,OPTIONS"));
+            //config.EnableCors(new EnableCorsAttribute("*", "*", "*"));
+            //config.EnableCors();
 
             // Rutas de API web
             config.MapHttpAttributeRoutes();
