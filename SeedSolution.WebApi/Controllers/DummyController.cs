@@ -33,7 +33,6 @@ namespace SeedSolution.WebApi.Controllers
 
         [HttpPost]
         [Route ("dummy/add_client")]
-        //[EnableCors(origins: "*", headers: "*", methods: "*", SupportsCredentials = true)]
         public async Task<IHttpActionResult> AddClient(Client client)
         {
             try
@@ -49,7 +48,6 @@ namespace SeedSolution.WebApi.Controllers
 
         [HttpPost]
         [Route("dummy/add_payment")]
-        //[EnableCors(origins: "*", headers: "*", methods: "*", SupportsCredentials = true)]
         public async Task<IHttpActionResult> AddPayment(Payment payment)
         {
             try
@@ -66,7 +64,6 @@ namespace SeedSolution.WebApi.Controllers
         [HttpGet]
         [ResponseType(typeof(Client))]
         [Route("dummy/search_client")]
-        //[EnableCors(origins: "*", headers: "*", methods: "*", SupportsCredentials = true)]
         public async Task<IHttpActionResult> SearchClient(string document_number)
         {
             try
@@ -83,7 +80,6 @@ namespace SeedSolution.WebApi.Controllers
         [HttpGet]
         [ResponseType(typeof(Payment))]
         [Route("dummy/search_payment")]
-        //[EnableCors(origins: "*", headers: "*", methods: "*", SupportsCredentials = true)]
         public async Task<IHttpActionResult> GetAssignment(int client_id)
         {
             try
